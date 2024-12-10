@@ -1,118 +1,120 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+// App.tsx
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import messaging from '@react-native-firebase/messaging';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import HomeScreen from './screens/homeScreen';
+import LoginScreen from './screens/loginScreen';
+import MainScreen from './screens/mainScreen2';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { StackParamList } from './types';
+import { useEffect } from 'react';
+import { Alert } from 'react-native';
+import axios from 'axios';
+import notifee from '@notifee/react-native';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const Stack = createNativeStackNavigator<StackParamList>();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+const App: React.FC = () => {
+  useEffect(() => {
+    // 알림 채널 생성
+    const createNotificationChannel = async () => {
+      await notifee.createChannel({
+        id : 'default',
+        name : 'Default Channel',
+        importance : notifee.AndroidImportance.HIGH,
+      });
+    };
+    createNotificationChannel();
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+    //FCM기기토큰 설정
+    const fetchDeviceToken = async () => {
+      try
+      {
+        const deviceToken = await messaging().getToken();
+        console.log('FCM Token : ', deviceToken);
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+        await sendTokenToServer(deviceToken);
+      }
+      catch(error)
+      {
+        console.log('FCM 토믄 생성 오류', error);
+      }
+    };
+    //FCM푸시알림권한
+    const requestPermission = async () => {
+      const authStatus = await messaging().requestPermission();
+      const enabled =
+        authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+        authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+      if (enabled) {
+        console.log('푸시 알림 권한 획득');
+        fetchDeviceToken();
+      } else {
+        Alert.alert('알림 권한이 필요합니다.');
+      }
+    };
+    requestPermission();
+
+    // Foreground 알림 처리
+    const unsubscribe = messaging().onMessage(async (remoteMessage) => {
+      console.log('Foreground Notification:', remoteMessage);
+      Alert.alert(
+        '새 알림aaa',
+        remoteMessage.notification?.title || '알림 제목 없음',
+      );
+    });
+
+    //backbround 알림처리
+    const unsubscribeNotificationOpened = messaging().onNotificationOpenedApp((remoteMessage) => {
+      console.log('백그라운드 알림');
+      Alert.alert(
+        '알림 클릭',
+        remoteMessage.notification?.title || '제목없음',
+      );
+    });
+
+    //종료상태 알림 처리
+    messaging().getInitialNotification().then((remoteMessage) => {
+      if(remoteMessage)
+      {
+        console.log('종료 알림 클릭', remoteMessage);
+        Alert.alert('종료상태 알림 클릭', remoteMessage.notification?.title || '제목없음');
+      }
+    });
+
+    return () => {
+      unsubscribe();
+      unsubscribeNotificationOpened();
+    };
+  }, []);
+
+  //FCM토큰 FCM서버전송 위해 Nest서버 토큰전송
+  const sendTokenToServer = async (token: string) => {
+    try
+    {
+      const response = await axios.post('http://10.0.2.2:3000/fb/tk', {
+        token : token,
+      });
+      console.log('Token sent to server:', response.data);
+    }
+    catch (error)
+    {
+      console.error('Error sending token to server:', error);
+    }
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Main" component={MainScreen} initialParams={{ inputs: { ip1: '', ip2: '' } }} options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;

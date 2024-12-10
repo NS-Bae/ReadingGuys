@@ -14,6 +14,17 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-ReadingGuys-ReadingGuysTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReadingGuys-ReadingGuysTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		11A787F47D2349E9B6EB2E7E /* NotoSansKR-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4CBBB02D1F94F48AA4D5E0D /* NotoSansKR-Black.ttf */; };
+		531441537D77411094B93BB3 /* NotoSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7F1D70C494513B5F52F34 /* NotoSansKR-Bold.ttf */; };
+		EBBC20175F414889BDD4BF1A /* NotoSansKR-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49035C668DF4416790074498 /* NotoSansKR-ExtraBold.ttf */; };
+		623B336EFE3441248EB75ABD /* NotoSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D86ACD68BB24086B4205B8B /* NotoSansKR-ExtraLight.ttf */; };
+		BCAFCE21D0024AE095E16353 /* NotoSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31565B26F5384C58A4BFA68F /* NotoSansKR-Light.ttf */; };
+		72AE74B7799B4BE5B8EAC44F /* NotoSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F569D23F5BED4F72986DE75B /* NotoSansKR-Medium.ttf */; };
+		49FF6CE980704324972A19E0 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F2D349B874887BBFE8801 /* NotoSansKR-Regular.ttf */; };
+		397D2CBD0B574818A03CD842 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10412846DB0043769487537E /* NotoSansKR-SemiBold.ttf */; };
+		D6B860EB8BA54BDBB41A1849 /* NotoSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0989C70B89984E66B4841BDA /* NotoSansKR-Thin.ttf */; };
+		DA4620A96BDE461E81669D26 /* NotoSansKR-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D0399532755458AB2E2B79B /* NotoSansKR-VariableFont_wght.ttf */; };
+		646A75A34BC2444F8604B552 /* 나눔손글씨 대한민국 열사체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 637C214A3C824C99B9E2BD23 /* 나눔손글씨 대한민국 열사체.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +56,17 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReadingGuys/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ReadingGuys-ReadingGuysTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingGuys-ReadingGuysTests.release.xcconfig"; path = "Target Support Files/Pods-ReadingGuys-ReadingGuysTests/Pods-ReadingGuys-ReadingGuysTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B4CBBB02D1F94F48AA4D5E0D /* NotoSansKR-Black.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Black.ttf"; path = "../assets/fonts/NotoSansKR-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AC7F1D70C494513B5F52F34 /* NotoSansKR-Bold.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Bold.ttf"; path = "../assets/fonts/NotoSansKR-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		49035C668DF4416790074498 /* NotoSansKR-ExtraBold.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-ExtraBold.ttf"; path = "../assets/fonts/NotoSansKR-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D86ACD68BB24086B4205B8B /* NotoSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-ExtraLight.ttf"; path = "../assets/fonts/NotoSansKR-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		31565B26F5384C58A4BFA68F /* NotoSansKR-Light.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Light.ttf"; path = "../assets/fonts/NotoSansKR-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F569D23F5BED4F72986DE75B /* NotoSansKR-Medium.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Medium.ttf"; path = "../assets/fonts/NotoSansKR-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B3F2D349B874887BBFE8801 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Regular.ttf"; path = "../assets/fonts/NotoSansKR-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		10412846DB0043769487537E /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-SemiBold.ttf"; path = "../assets/fonts/NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0989C70B89984E66B4841BDA /* NotoSansKR-Thin.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-Thin.ttf"; path = "../assets/fonts/NotoSansKR-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2D0399532755458AB2E2B79B /* NotoSansKR-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "NotoSansKR-VariableFont_wght.ttf"; path = "../assets/fonts/NotoSansKR-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		637C214A3C824C99B9E2BD23 /* 나눔손글씨 대한민국 열사체.ttf */ = {isa = PBXFileReference; name = "나눔손글씨 대한민국 열사체.ttf"; path = "../assets/fonts/나눔손글씨 대한민국 열사체.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +146,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				5B5E1F8447B44F45A8BC7A40 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +172,25 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		5B5E1F8447B44F45A8BC7A40 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				B4CBBB02D1F94F48AA4D5E0D /* NotoSansKR-Black.ttf */,
+				5AC7F1D70C494513B5F52F34 /* NotoSansKR-Bold.ttf */,
+				49035C668DF4416790074498 /* NotoSansKR-ExtraBold.ttf */,
+				7D86ACD68BB24086B4205B8B /* NotoSansKR-ExtraLight.ttf */,
+				31565B26F5384C58A4BFA68F /* NotoSansKR-Light.ttf */,
+				F569D23F5BED4F72986DE75B /* NotoSansKR-Medium.ttf */,
+				5B3F2D349B874887BBFE8801 /* NotoSansKR-Regular.ttf */,
+				10412846DB0043769487537E /* NotoSansKR-SemiBold.ttf */,
+				0989C70B89984E66B4841BDA /* NotoSansKR-Thin.ttf */,
+				2D0399532755458AB2E2B79B /* NotoSansKR-VariableFont_wght.ttf */,
+				637C214A3C824C99B9E2BD23 /* 나눔손글씨 대한민국 열사체.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +287,17 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				11A787F47D2349E9B6EB2E7E /* NotoSansKR-Black.ttf in Resources */,
+				531441537D77411094B93BB3 /* NotoSansKR-Bold.ttf in Resources */,
+				EBBC20175F414889BDD4BF1A /* NotoSansKR-ExtraBold.ttf in Resources */,
+				623B336EFE3441248EB75ABD /* NotoSansKR-ExtraLight.ttf in Resources */,
+				BCAFCE21D0024AE095E16353 /* NotoSansKR-Light.ttf in Resources */,
+				72AE74B7799B4BE5B8EAC44F /* NotoSansKR-Medium.ttf in Resources */,
+				49FF6CE980704324972A19E0 /* NotoSansKR-Regular.ttf in Resources */,
+				397D2CBD0B574818A03CD842 /* NotoSansKR-SemiBold.ttf in Resources */,
+				D6B860EB8BA54BDBB41A1849 /* NotoSansKR-Thin.ttf in Resources */,
+				DA4620A96BDE461E81669D26 /* NotoSansKR-VariableFont_wght.ttf in Resources */,
+				646A75A34BC2444F8604B552 /* 나눔손글씨 대한민국 열사체.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
